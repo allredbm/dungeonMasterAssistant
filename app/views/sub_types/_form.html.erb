@@ -1,0 +1,32 @@
+<%= form_with(model: sub_type, local: true) do |form| %>
+  <% if sub_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sub_type.errors.count, "error") %> prohibited this sub_type from being saved:</h2>
+
+      <ul>
+      <% sub_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :monster_type_id %>
+    <%= form.collection_select :monster_type_id, @monster_types, :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
