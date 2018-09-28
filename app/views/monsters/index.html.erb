@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Monsters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Book</th>
+      <th>Page</th>
+      <th>Monster type</th>
+      <th>Sub type</th>
+      <th>Challenge</th>
+      <th>Hit points</th>
+      <th>Armor class</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @monsters.each do |monster| %>
+      <tr>
+        <td><%= monster.name %></td>
+        <td><%= monster.book.name %></td>
+        <td><%= monster.page %></td>
+        <td><%= monster.monster_type.name %></td>
+        <td><%= monster.sub_type.name %></td>
+        <td><%= monster.challenge %></td>
+        <td><%= monster.hit_points %></td>
+        <td><%= monster.armor_class %></td>
+        <td><%= monster.description %></td>
+        <td><%= link_to 'Show', monster %></td>
+        <td><%= link_to 'Edit', edit_monster_path(monster) %></td>
+        <td><%= link_to 'Destroy', monster, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Monster', new_monster_path %>

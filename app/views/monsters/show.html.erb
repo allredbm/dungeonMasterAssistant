@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @monster.name %>
+</p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @monster.book.name %>
+</p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @monster.page %>
+</p>
+
+<p>
+  <strong>Monster type:</strong>
+  <%= @monster.monster_type.name %>
+</p>
+
+<p>
+  <strong>Sub type:</strong>
+  <%= @monster.sub_type.name %>
+</p>
+
+<p>
+  <strong>Challenge:</strong>
+  <%= @monster.challenge %>
+</p>
+
+<p>
+  <strong>Hit points:</strong>
+  <%= @monster.hit_points %>
+</p>
+
+<p>
+  <strong>Armor class:</strong>
+  <%= @monster.armor_class %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @monster.description %>
+</p>
+
+<%= link_to 'Edit', edit_monster_path(@monster) %> |
+<%= link_to 'Back', monsters_path %>

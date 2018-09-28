@@ -1,0 +1,62 @@
+<%= form_with(model: monster, local: true) do |form| %>
+  <% if monster.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(monster.errors.count, "error") %> prohibited this monster from being saved:</h2>
+
+      <ul>
+      <% monster.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_id %>
+    <%= form.collection_select :book_id, @books, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :page %>
+    <%= form.number_field :page %>
+  </div>
+
+  <div class="field">
+    <%= form.label :monster_type_id %>
+    <%= form.collection_select :monster_type_id, @monster_types, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sub_type_id %>
+    <%= form.collection_select :sub_type_id, @sub_types, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :challenge %>
+    <%= form.text_field :challenge %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hit_points %>
+    <%= form.number_field :hit_points %>
+  </div>
+
+  <div class="field">
+    <%= form.label :armor_class %>
+    <%= form.number_field :armor_class %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

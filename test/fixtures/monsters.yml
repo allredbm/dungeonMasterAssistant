@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  book_id: 1
+  page: 1
+  monster_type_id: 1
+  sub_type_id: 1
+  challenge: 9.99
+  hit_points: 1
+  armor_class: 1
+  description: MyString
+
+two:
+  name: MyString
+  book_id: 1
+  page: 1
+  monster_type_id: 1
+  sub_type_id: 1
+  challenge: 9.99
+  hit_points: 1
+  armor_class: 1
+  description: MyString
